@@ -9,6 +9,9 @@ public class TouchToChangeLevel : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene(LevelToLoad);
+        if (other.gameObject.tag == "Player")
+        {
+            SceneManager.LoadScene(LevelToLoad);
+        }
     }
 }
